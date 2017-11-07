@@ -100,6 +100,12 @@ class ec2tagfacts::params {
       $enable_epel  = false
       $awscli_pkg   = 'pip'
     }
+    'FreeBSD': {
+      $pippkg       = false
+      $rubyjsonpkg  = 'rubygem-json_pure'
+      $awscli       = 'awscli'
+      $enable_epel  = false
+    }
     default: {
       fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
     }
